@@ -1,0 +1,215 @@
+{
+  "type": "doc",
+  "version": 1,
+  "content": [
+    {
+      "type": "panel",
+      "attrs": { "panelType": "note" },
+      "content": [
+        { "type": "paragraph", "content": [{ "type": "text", "text": "This description is a specification.", "marks": [{ "type": "strong" }] }] },
+        { "type": "paragraph", "content": [{ "type": "text", "text": "Do not describe implementation unless it is already decided. Do not describe completed work. Do not describe future outcomes. Describe only known requirements." }] }
+      ]
+    },
+    {
+      "type": "panel",
+      "attrs": { "panelType": "info" },
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            { "type": "text", "text": "ℹ️ TL;DR  ", "marks": [{ "type": "strong" }] },
+            { "type": "text", "text": "{{TLDR}}" }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            { "type": "text", "text": "Complexity ", "marks": [{ "type": "strong" }] },
+            { "type": "status", "attrs": { "text": "{{COMPLEXITY}}", "color": "{{COMPLEXITY_COLOR}}", "localId": "st-cx" } },
+            { "type": "text", "text": "  — reason:" }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "{{COMPLEXITY_REASON_1}}" }] }] },
+            { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "{{COMPLEXITY_REASON_2}}" }] }] }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": { "level": 3 },
+      "content": [{ "type": "text", "text": "🎯 Objective" }]
+    },
+    {
+      "type": "blockquote",
+      "content": [
+        { "type": "paragraph", "content": [{ "type": "text", "text": "{{OBJECTIVE}}" }] }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": { "level": 3 },
+      "content": [{ "type": "text", "text": "💡 Impact" }]
+    },
+    {
+      "type": "panel",
+      "attrs": { "panelType": "success" },
+      "content": [
+        { "type": "paragraph", "content": [{ "type": "text", "text": "{{IMPACT}}" }] }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": { "level": 3 },
+      "content": [{ "type": "text", "text": "📋 Context" }]
+    },
+    {
+      "type": "panel",
+      "attrs": { "panelType": "note" },
+      "content": [
+        { "type": "paragraph", "content": [{ "type": "text", "text": "{{CONTEXT}}" }] }
+      ]
+    },
+    {
+      "type": "expand",
+      "attrs": { "title": "🔌 API Contract" },
+      "content": [
+        {
+          "type": "codeBlock",
+          "attrs": { "language": "http" },
+          "content": [{ "type": "text", "text": "{{API_CONTRACT_HAPPY_PATH}}\n\nErrors\n400 { \"message\": \"...\" }   // describe EACH error case, not just the happy path\n\nLimits\n- min / max ...\n- unknown inputs ...\n\nOrdering\n- describe the order of returned items explicitly" }]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": { "level": 3 },
+      "content": [{ "type": "text", "text": "✅ Acceptance Criteria" }]
+    },
+    {
+      "type": "taskList",
+      "attrs": { "localId": "ac" },
+      "content": [
+        { "type": "taskItem", "attrs": { "localId": "ac1", "state": "TODO" }, "content": [{ "type": "text", "text": "{{AC_1}}" }] },
+        { "type": "taskItem", "attrs": { "localId": "ac2", "state": "TODO" }, "content": [{ "type": "text", "text": "{{AC_2}}" }] }
+      ]
+    },
+    {
+      "type": "expand",
+      "attrs": { "title": "🔧 Technical notes" },
+      "content": [
+        { "type": "paragraph", "content": [{ "type": "text", "text": "{{TECH_NOTES}}" }] },
+        {
+          "type": "codeBlock",
+          "attrs": { "language": "{{CODE_LANGUAGE}}" },
+          "content": [{ "type": "text", "text": "{{CODE_SNIPPET}}" }]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": { "level": 3 },
+      "content": [{ "type": "text", "text": "🧪 Test Plan" }]
+    },
+    {
+      "type": "table",
+      "attrs": { "isNumberColumnEnabled": false, "layout": "default" },
+      "content": [
+        {
+          "type": "tableRow",
+          "content": [
+            { "type": "tableHeader", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Scenario" }] }] },
+            { "type": "tableHeader", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Expected" }] }] }
+          ]
+        },
+        {
+          "type": "tableRow",
+          "content": [
+            { "type": "tableCell", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "{{TEST_SCENARIO_1}}" }] }] },
+            { "type": "tableCell", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "{{TEST_EXPECTED_1}}" }] }] }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": { "level": 3 },
+      "content": [{ "type": "text", "text": "⚠️ Risks" }]
+    },
+    {
+      "type": "table",
+      "attrs": { "isNumberColumnEnabled": false, "layout": "default" },
+      "content": [
+        {
+          "type": "tableRow",
+          "content": [
+            { "type": "tableHeader", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Risk" }] }] },
+            { "type": "tableHeader", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Impact" }] }] },
+            { "type": "tableHeader", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mitigation" }] }] }
+          ]
+        },
+        {
+          "type": "tableRow",
+          "content": [
+            { "type": "tableCell", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "{{RISK_1}}" }] }] },
+            { "type": "tableCell", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "{{RISK_1_IMPACT}}" }] }] },
+            { "type": "tableCell", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "{{RISK_1_MITIGATION}}" }] }] }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": { "level": 3 },
+      "content": [{ "type": "text", "text": "📊 Observability" }]
+    },
+    {
+      "type": "table",
+      "attrs": { "isNumberColumnEnabled": false, "layout": "default" },
+      "content": [
+        {
+          "type": "tableRow",
+          "content": [
+            { "type": "tableHeader", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Metric" }] }] },
+            { "type": "tableHeader", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Purpose" }] }] }
+          ]
+        },
+        {
+          "type": "tableRow",
+          "content": [
+            { "type": "tableCell", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "{{METRIC_1}}" }] }] },
+            { "type": "tableCell", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "{{METRIC_1_PURPOSE}}" }] }] }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": { "level": 3 },
+      "content": [{ "type": "text", "text": "🚫 Out of Scope" }]
+    },
+    {
+      "type": "panel",
+      "attrs": { "panelType": "warning" },
+      "content": [
+        { "type": "paragraph", "content": [{ "type": "text", "text": "{{OUT_OF_SCOPE}}" }] }
+      ]
+    },
+    { "type": "rule" },
+    {
+      "type": "heading",
+      "attrs": { "level": 3 },
+      "content": [{ "type": "text", "text": "🏁 Definition of Done" }]
+    },
+    {
+      "type": "taskList",
+      "attrs": { "localId": "dod" },
+      "content": [
+        { "type": "taskItem", "attrs": { "localId": "dod1", "state": "TODO" }, "content": [{ "type": "text", "text": "{{DOD_1}}" }] }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "type": "doc",
+  "version": 1,
+  "content": [
+    {
+      "type": "panel",
+      "attrs": { "panelType": "note" },
+      "content": [
+        { "type": "paragraph", "content": [{ "type": "text", "text": "This description is a specification.", "marks": [{ "type": "strong" }] }] },
+        { "type": "paragraph", "content": [{ "type": "text", "text": "Do not describe implementation unless it is already decided. Do not describe completed work. Do not describe future outcomes. Describe only known requirements." }] }
+      ]
+    },
+    {
+      "type": "panel",
+      "attrs": { "panelType": "error" },
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            { "type": "text", "text": "ℹ️ TL;DR  ", "marks": [{ "type": "strong" }] },
+            { "type": "text", "text": "{{TLDR}}" }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            { "type": "text", "text": "Severity ", "marks": [{ "type": "strong" }] },
+            { "type": "status", "attrs": { "text": "{{SEVERITY_TEXT}}", "color": "{{SEVERITY_COLOR}}", "localId": "bg-sev" } },
+            { "type": "text", "text": "    Environment ", "marks": [{ "type": "strong" }] },
+            { "type": "status", "attrs": { "text": "{{ENV_TEXT}}", "color": "neutral", "localId": "bg-env" } },
+            { "type": "text", "text": "    Complexity ", "marks": [{ "type": "strong" }] },
+            { "type": "status", "attrs": { "text": "{{COMPLEXITY}}", "color": "{{COMPLEXITY_COLOR}}", "localId": "st-cx" } },
+            { "type": "text", "text": "  — reason:" }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "{{COMPLEXITY_REASON_1}}" }] }] }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": { "level": 3 },
+      "content": [{ "type": "text", "text": "🐞 Summary" }]
+    },
+    {
+      "type": "blockquote",
+      "content": [
+        { "type": "paragraph", "content": [{ "type": "text", "text": "{{BUG_SUMMARY}}" }] }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": { "level": 3 },
+      "content": [{ "type": "text", "text": "🔁 Steps to Reproduce" }]
+    },
+    {
+      "type": "orderedList",
+      "content": [
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "{{STEP_1}}" }] }] },
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "{{STEP_2}}" }] }] },
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "{{STEP_3}}" }] }] }
+      ]
+    },
+    {
+      "type": "panel",
+      "attrs": { "panelType": "success" },
+      "content": [
+        { "type": "paragraph", "content": [
+          { "type": "text", "text": "Expected: ", "marks": [{ "type": "strong" }] },
+          { "type": "text", "text": "{{EXPECTED}}" }
+        ] }
+      ]
+    },
+    {
+      "type": "panel",
+      "attrs": { "panelType": "error" },
+      "content": [
+        { "type": "paragraph", "content": [
+          { "type": "text", "text": "Actual: ", "marks": [{ "type": "strong" }] },
+          { "type": "text", "text": "{{ACTUAL}}" }
+        ] }
+      ]
+    },
+    {
+      "type": "expand",
+      "attrs": { "title": "📐 Logs / Stack trace" },
+      "content": [
+        {
+          "type": "codeBlock",
+          "attrs": { "language": "{{LOG_LANGUAGE}}" },
+          "content": [{ "type": "text", "text": "{{LOG_SNIPPET}}" }]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": { "level": 3 },
+      "content": [{ "type": "text", "text": "🚫 Out of Scope" }]
+    },
+    {
+      "type": "panel",
+      "attrs": { "panelType": "warning" },
+      "content": [
+        { "type": "paragraph", "content": [{ "type": "text", "text": "{{OUT_OF_SCOPE}}" }] }
+      ]
+    },
+    { "type": "rule" },
+    {
+      "type": "heading",
+      "attrs": { "level": 3 },
+      "content": [{ "type": "text", "text": "🏁 Definition of Done" }]
+    },
+    {
+      "type": "taskList",
+      "attrs": { "localId": "dod" },
+      "content": [
+        { "type": "taskItem", "attrs": { "localId": "dod1", "state": "TODO" }, "content": [{ "type": "text", "text": "Root cause identified" }] },
+        { "type": "taskItem", "attrs": { "localId": "dod2", "state": "TODO" }, "content": [{ "type": "text", "text": "Fix covered by a regression test" }] },
+        { "type": "taskItem", "attrs": { "localId": "dod3", "state": "TODO" }, "content": [{ "type": "text", "text": "Verified on {{ENV_TEXT}}" }] }
+      ]
+    }
+  ]
+}
