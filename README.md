@@ -13,6 +13,23 @@ All skills run on the official **Atlassian Remote MCP**, so they work anywhere C
 | ------------- | ---------------------------------------------------------------------------- |
 | `jira-create` | Create rich, dashboard-style Jira issues (Task, Bug, Story, Epic, Subtask)   |
 
+## What a ticket looks like
+
+The skill produces spec-first, consistently structured tickets. Screenshots below use a
+generic example (no real project data).
+
+**Header — specification notice, TL;DR, Complexity (with reason), Objective, Impact, Context**
+
+![Ticket overview](docs/images/ticket-overview.png)
+
+**Collapsible API Contract (with error cases) + testable Acceptance Criteria**
+
+![API contract and acceptance criteria](docs/images/ticket-api-contract.png)
+
+**Test Plan, Risks, and Observability as tables + Out of Scope + Definition of Done**
+
+![Test plan, risks, observability tables](docs/images/ticket-tables.png)
+
 ## Layout
 
 ```
