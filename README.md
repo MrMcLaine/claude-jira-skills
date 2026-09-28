@@ -12,6 +12,7 @@ All skills run on the official **Atlassian Remote MCP**, so they work anywhere C
 | Skill         | What it does                                                                 |
 | ------------- | ---------------------------------------------------------------------------- |
 | `jira-create` | Create rich, dashboard-style Jira issues (Task, Bug, Story, Epic, Subtask)   |
+| `r-assess`    | Assess a task's **R responsibility rating** (`R0`–`R3+`) from Blast Radius / Reversibility / Detectability, propose buy-downs, and **self-calibrate** from a local journal of past assessments and human overrides |
 
 ## What a ticket looks like
 
@@ -35,12 +36,19 @@ generic example (no real project data).
 ```
 claude-jira-skills/
 ├── skills/
-│   └── jira-create/
-│       ├── SKILL.md
-│       └── templates/        # ready-to-fill ADF documents
-│           ├── task.adf.json
-│           ├── bug.adf.json
-│           └── story.adf.json
+│   ├── jira-create/
+│   │   ├── SKILL.md
+│   │   └── templates/        # ready-to-fill ADF documents
+│   │       ├── task.adf.json
+│   │       ├── bug.adf.json
+│   │       └── story.adf.json
+│   └── r-assess/
+│       ├── SKILL.md          # the workflow: axes → matrix → buy-down → record
+│       ├── references/
+│       │   └── framework.md  # full R framework (stable — the part that doesn't learn)
+│       └── calibration/      # local knowledge (evolving — the part that does)
+│           ├── CALIBRATION.md  # team axis anchors, precedents, ✳-cell case law, limits
+│           └── journal.jsonl   # append-only log of every assessment
 └── shared/
     └── adf-cheatsheet.md      # reusable ADF reference for any skill
 ```
@@ -57,7 +65,16 @@ cp -r skills/jira-create <your-repo>/.claude/skills/
 cp -r skills/jira-create ~/.claude/skills/
 ```
 
-The skill loads its `templates/` and `../../shared/adf-cheatsheet.md` on demand.
+**`r-assess` should be symlinked, not copied** — it writes to its own `calibration/` on every
+assessment, and a symlink keeps those writes in this repo where they are git-reviewable (a copy
+silently diverges):
+
+```bash
+ln -s "$(pwd)/skills/r-assess" <your-repo>/.claude/skills/r-assess
+```
+
+The skills load their `templates/`, `references/`, `calibration/`, and
+`../../shared/adf-cheatsheet.md` on demand.
 
 ## Requirements
 

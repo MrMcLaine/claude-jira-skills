@@ -120,7 +120,8 @@ defines the canonical order — keep it; drop sections that don't apply, never r
 0. **Specification notice** (top note panel) — the fixed disclaimer (see content rules). Always
    the first node of every ticket, verbatim.
 1. **TL;DR banner** (blue info panel) — one sentence on what the change is, plus a **Complexity**
-   lozenge and its **reason** bullets (grooming signal; see content rules).
+   lozenge and its **reason** bullets (grooming signal; see content rules), plus an **R** lozenge
+   with its axes line and notes (responsibility rating; see content rules).
 2. **🎯 Objective** — the goal, in one line.
 3. **💡 Impact** — why now / what it unblocks or removes (e.g. "removes N calls …").
 4. **📋 Context** — the current state and why it's insufficient.
@@ -174,6 +175,20 @@ defines the canonical order — keep it; drop sections that don't apply, never r
   - **Low** — additive endpoint, internal refactoring, config-only change.
   - **Medium** — schema changes, caching changes, new dependency, cross-service contract tweak.
   - **High** — data migrations, breaking API changes, auth/permission changes, irreversible ops.
+- **R lozenge (responsibility rating — required on every plannable ticket).** Complexity says how
+  much work; **R** (`R0`–`R3`, optional `+`) says what the approver risks. It is produced by the
+  **`r-assess` skill** (`../r-assess/SKILL.md`) — if the task has no R yet, run it first; a task
+  without R is not planned. **Epics never get R** — delete the R paragraph and its bullets.
+  Filling the template placeholders:
+  - `{{R_LEVEL}}` — `R0`…`R3+`; `{{R_COLOR}}` is fixed: **R0 → `green` · R1 → `yellow` ·
+    R2/R2+/R3/R3+ → `red`**.
+  - `{{R_AXES}}` — the derivation, e.g. `B Med · V Med · D Low → E Low`.
+  - `{{R_NOTE_1}}` bullets — one per note: each `+` reason (**mandatory whenever the level carries
+    a `+`** — a `+` without a named reason is invalid), and each pending buy-down as
+    `buys: <what> (proof: <how it's demonstrated>) → <resulting R>`. No notes → delete the bulletList.
+  - Also add the matching label to `additional_fields.labels`:
+    `r0` | `r1` | `r2` | `r2-plus` | `r3` | `r3-plus` — this makes R queryable in JQL (review-time
+    stats per R, reviewer concentration).
 - **Never duplicate native Jira fields.** Information Jira already owns must NOT be repeated in the
   description — it goes stale and contradicts the source of truth. Do not put any of these in the
   body; set them as real fields instead:
